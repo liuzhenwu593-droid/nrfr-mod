@@ -17,14 +17,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Download android.jar (hidden APIs)
-        run: |
-          mkdir -p $ANDROID_HOME/platforms/android-34
-          curl -L https://raw.githubusercontent.com/Reginer/aosp-android-jar/refs/heads/main/android-34/android.jar -o $ANDROID_HOME/platforms/android-34/android.jar
-
       - name: Build debug APK
         run: |
           chmod +x gradlew
